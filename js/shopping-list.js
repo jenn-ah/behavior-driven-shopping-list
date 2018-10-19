@@ -14,10 +14,9 @@ class ShoppingList extends ShoppingListItem {
     } else if (obj = null) {
       return ShoppingList.pop();
     } else {
-      return "Item not found"
+      return "Item not found";
 
     }
-    console.log(this.items);
   }
   render() {
     return `<ul> ${this.items.map(function () {

@@ -6,7 +6,7 @@ describe('ShoppingListItem', function () {
   let newItem;
 
   beforeEach(function () {
-    newItem = new ShoppingListItem('drugs', 'meth');
+    newItem = new ShoppingListItem('dairy', 'milk');
   })
   it('should be a class', function () {
     expect(newItem).to.be.instanceOf(ShoppingListItem);
@@ -31,8 +31,8 @@ describe('ShoppingListItem', function () {
   describe("methods", function () {
 
     it('should pass two arguments', function () {
-      expect(newItem.name).to.equal('drugs');
-      expect(newItem.description).to.equal('meth');
+      expect(newItem.name).to.equal('milk');
+      expect(newItem.description).to.equal('dairy');
     })
   })
 
@@ -62,9 +62,9 @@ describe('ShoppingListItem', function () {
 
 
 describe('ShoppingList', function () {
-  let items;
+  //let items;
   let newList;
-  let shoppingListItems = 'banana';
+  //let shoppingListItems = 'banana';
 
   before(function () {
     newList = new ShoppingList();
@@ -74,7 +74,7 @@ describe('ShoppingList', function () {
     expect(newList).to.be.instanceOf(ShoppingList);
   });
   it('should be an empty array', function () {
-    expect(items).to.deep.equal([]);
+    expect(newList.items).to.deep.equal([]);
   });
 
   it('should have method addItem', function () {
@@ -101,11 +101,9 @@ describe('ShoppingList', function () {
   describe('render', function () {
     it('should have render method', function () {
       expect(newList.render).to.be.a('function');
-      // ShoppingList.render();
       //expect(ShoppingList.render()).to.be.a('string');
     });
     it('should return a <ul> list of rendered items', function () {
-      expect(newList.render())
       expect(newList.render()).to.be.a('string');
     });
   })
